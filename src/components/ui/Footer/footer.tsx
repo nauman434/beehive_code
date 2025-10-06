@@ -42,7 +42,7 @@ export default function Footer({ glossaryLink }: FooterProps) {
           <div className="flex flex-col items-center md:items-start space-y-2 text-gray-700 font-medium">
             <h4 className="font-semibold uppercase text-gray-900 mb-2">Resources</h4>
             <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
-            <Link href={glossaryLink} target="_blank" className="hover:text-primary transition-colors">Travel Glossary</Link>
+            <Link href="/glossary" className="hover:text-primary transition-colors">Travel Glossary</Link>
           </div>
 
           {/* Right: Newsletter & Social */}
