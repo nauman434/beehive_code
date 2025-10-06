@@ -7,7 +7,6 @@ import Button from "@/components/global/button";
 import Modal from "@/components/global/modal";
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
@@ -31,55 +30,13 @@ export default function Navbar() {
                         </Link>
                     </div>
 
-                    {/* Right: Desktop Links + Button */}
-                    <div className="hidden md:flex items-center space-x-6">
-                        {/* Links */}
-                        <div className="flex items-center space-x-6 text-[16px] font-medium uppercase tracking-wide">
-                            <Link href="/how-it-works" className="hover:text-primary transition-colors">
-                                How it works
-                            </Link>
-                            <Link href="/cheap-flights" className="hover:text-primary transition-colors">
-                                Cheap Flights
-                            </Link>
-                            <Link href="/premium" className="hover:text-primary transition-colors">
-                                Premium
-                            </Link>
-                            <Link href="/elite" className="hover:text-primary transition-colors">
-                                Elite
-                            </Link>
-                        </div>
-
-                        {/* Join Us Button */}
-                        <Button
-                            filled
-                            onClick={() => setIsModalOpen(true)}
-                        >
-                            <Link href="/join-us">Join Us</Link>
-                        </Button>
-                    </div>
-
-                    {/* Hamburger Menu: Only Mobile */}
-                    <div className="md:hidden">
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="flex flex-col justify-between w-6 h-4 focus:outline-none"
-                        >
-                            <span
-                                className={`block h-0.5 w-full bg-black transform transition duration-300 ${isOpen ? "rotate-45 translate-y-2" : ""
-                                    }`}
-                            />
-                            <span
-                                className={`block h-0.5 w-full bg-black transition duration-300 ${isOpen ? "opacity-0" : ""
-                                    }`}
-                            />
-                            <span
-                                className={`block h-0.5 w-full bg-black transform transition duration-300 ${isOpen ? "-rotate-45 -translate-y-2" : ""
-                                    }`}
-                            />
-                        </button>
-                    </div>
+                    {/* Right: Join Us Button */}
+                    <Button filled onClick={() => setIsModalOpen(true)}>
+                        <Link href="/join-us">Join Us</Link>
+                    </Button>
                 </nav>
             </Container>
+
             {/* Modal */}
             <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                 <iframe

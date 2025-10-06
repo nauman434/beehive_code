@@ -8,20 +8,18 @@ import Modal from "@/components/global/modal";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 interface FooterProps {
-  contactEmail: string;
-  xHandle: string;
   glossaryLink: string;
 }
 
-export default function Footer({ contactEmail, xHandle, glossaryLink }: FooterProps) {
+export default function Footer({ glossaryLink }: FooterProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <footer className="w-full bg-gray-100 py-12">
       <Container>
-        <div className="flex flex-col md:flex-row items-start justify-between gap-8">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 text-center md:text-left">
           {/* Left: Logo + Intro */}
-          <div className="flex flex-col items-start mb-6 md:mb-0 max-w-xs">
+          <div className="flex flex-col items-center md:items-start mb-6 md:mb-0 max-w-xs">
             <Link href="/" className="mb-4">
               <svg width="209" height="40" viewBox="0 0 209 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M96.8549 4.00158C96.532 6.29416 98.0206 8.00317 100.34 8.00317C102.66 8.00317 104.63 6.29416 104.953 4.00158C105.276 1.70901 103.787 0 101.467 0C99.1476 0 97.1777 1.70901 96.8549 4.00158Z" fill="#1B005E"></path>
@@ -36,21 +34,19 @@ export default function Footer({ contactEmail, xHandle, glossaryLink }: FooterPr
               </svg>
             </Link>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Welcome to San Francisco Cheap Flights! Find vetted deals from SFO, tips, and insights to make your travel planning easier.
+              Welcome to San Francisco Cheap Flights! Find vetted deals, tips, and insights to make your travel planning easier.
             </p>
           </div>
 
-          {/* Center: Company Links */}
-          <div className="flex flex-col items-start space-y-2 text-gray-700 font-medium">
-            <h4 className="font-semibold uppercase text-gray-900 mb-2">Company</h4>
-            <Link href="/how-it-works" className="hover:text-primary transition-colors">How it works</Link>
-            <Link href="/cheap-flights" className="hover:text-primary transition-colors">Cheap Flights</Link>
-            <Link href="/premium" className="hover:text-primary transition-colors">Premium</Link>
-            <Link href="/elite" className="hover:text-primary transition-colors">Elite</Link>
+          {/* Center: Blog + Glossary */}
+          <div className="flex flex-col items-center md:items-start space-y-2 text-gray-700 font-medium">
+            <h4 className="font-semibold uppercase text-gray-900 mb-2">Resources</h4>
+            <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
+            <Link href={glossaryLink} target="_blank" className="hover:text-primary transition-colors">Travel Glossary</Link>
           </div>
 
           {/* Right: Newsletter & Social */}
-          <div className="flex flex-col items-end gap-4">
+          <div className="flex flex-col items-center md:items-end gap-4">
             <Button filled onClick={() => setIsModalOpen(true)}>
               Join Newsletter
             </Button>
@@ -58,9 +54,6 @@ export default function Footer({ contactEmail, xHandle, glossaryLink }: FooterPr
               <Link href="#" className="text-gray-500 hover:text-blue-600 transition"><FaFacebookF /></Link>
               <Link href="#" className="text-gray-500 hover:text-blue-400 transition"><FaTwitter /></Link>
               <Link href="#" className="text-gray-500 hover:text-pink-600 transition"><FaInstagram /></Link>
-            </div>
-            <div className="text-gray-600 text-sm mt-2">
-              Contact: <a href={`mailto:${contactEmail}`} className="underline">{contactEmail}</a> | <Link href={glossaryLink} target="_blank" className="underline">Travel Glossary</Link>
             </div>
           </div>
         </div>

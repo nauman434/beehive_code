@@ -10,16 +10,11 @@ export default function FreeGuide() {
   return (
     <section className="py-20 relative overflow-hidden">
       <Container>
-        <div className="bg-[#F9F4FF] rounded-3xl p-6 sm:p-10 flex flex-col items-center justify-center text-center gap-4 sm:gap-6 w-full relative overflow-hidden h-auto sm:h-[500px]">
+        <div className="bg-[#F9F4FF] rounded-3xl p-6 sm:p-10 flex flex-col items-center justify-center text-center gap-4 sm:gap-6 w-full relative sm:overflow-hidden  h-auto sm:h-[500px]">
           {/* Title */}
           <h2 className="leading-tight">
-            <span
-              className="block mb-2 sm:mb-4 text-pink-500 text-[18px] sm:text-[24px] font-bold tracking-wider"
-            >
-              Free San Francisco
-            </span>
-            <span className="block text-[50px] sm:text-[70px] md:text-[100px] font-bold text-foreground leading-snug">
-              Travel Guide
+            <span className="block text-[50px] sm:text-[70px] md:text-[80px] font-bold text-foreground leading-[100%]">
+              Free San Francisco Travel Guide
             </span>
           </h2>
 
@@ -49,7 +44,7 @@ export default function FreeGuide() {
           </div>
 
           {/* Top-left illustration for small screens */}
-          <div className="absolute -top-6 left-0 w-[150px] h-[150px] sm:hidden">
+          <div className="absolute -top-20 left-0 w-[150px] h-[150px] sm:hidden">
             <Image
               src="/illustration-2.svg"
               alt="Top left illustration"

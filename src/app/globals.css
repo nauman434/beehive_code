@@ -1,9 +1,17 @@
+/* 1️⃣ Import Google Fonts first */
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* 2️⃣ Then import Tailwind */
 @import "tailwindcss";
 
 /* 1️⃣ Base variables */
 :root {
   --background: #FFFDFA;
   --foreground: #1C1C1C;
+
+  /* Fonts */
+  --font-darker-grotesque: 'Darker Grotesque', sans-serif;
+  --font-inter: 'Inter', sans-serif;
 }
 
 /* 2️⃣ Tailwind theme tokens */
@@ -11,17 +19,24 @@
   --color-primary: #872BFF;
   --color-secondary: #F411CF;
   --color-accent: #FF8126;
-  --color-light: #A8A8A8
+  --color-light: #A8A8A8;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
-  /* Font variable from Host Grotesk */
-  --font-sans: var(--font-host-grotesk);
+  --font-sans: var(--font-darker-grotesque);
 }
 
 /* 3️⃣ Base styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  font-family: var(--font-sans, sans-serif);
+  font-style: normal;
+}
+
+/* 4️⃣ Paragraphs and buttons use Inter */
+p,
+button {
+  font-family: var(--font-inter, Arial, Helvetica, sans-serif);
+  font-weight: 400;
+  font-style: normal;
 }

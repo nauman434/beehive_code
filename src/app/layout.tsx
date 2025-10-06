@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Host_Grotesk } from "next/font/google";
+import { Darker_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar/navbar";
 import Footer from "@/components/ui/Footer/footer";
 
-const hostGrotesk = Host_Grotesk({
+
+// Inter for body / secondary text
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-host-grotesk",
-  display: "swap",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -23,8 +24,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`${hostGrotesk.variable} antialiased`}>
+    <html lang="en" className={`${inter.variable}`}>
+      <body className="antialiased bg-background text-foreground font-sans">
         <Navbar />
         <main>{children}</main>
         <Footer

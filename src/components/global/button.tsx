@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    "h-[50px] px-[30px] rounded-full font-medium text-sm transition-colors duration-200 cursor-pointer text-[16px]";
+    "h-[50px] px-[30px] rounded-full transition-colors duration-200 cursor-pointer text-[16px]";
 
   const filledStyles = "bg-primary text-white hover:bg-[#FF8126] hover:text-primary";
   const outlineStyles = "bg-[#F9F4FF] text-primary hover:bg-primary hover:text-white";

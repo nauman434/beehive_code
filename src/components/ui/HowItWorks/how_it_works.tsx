@@ -33,18 +33,29 @@ export default function HowItWorks() {
   return (
     <section className="py-20 relative">
       <Container>
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
           {/* Left Column */}
+          <div className="flex-1 flex justify-center relative w-full">
+            {/* Blurred Circle Behind Image */}
+            <div className="absolute bottom-0 right-0 w-full md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] rounded-full opacity-50 bg-[#D9952F] blur-[150px] sm:blur-[200px] md:blur-[250px] -z-10" />
+
+            <div className="relative w-full h-[500px] sm:h-[500px] md:h-[717px] max-w-full">
+              <Image
+                src="/travel-2.png"
+                alt="How it works illustration"
+                fill
+                className="object-contain w-full"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Right Column: Image */}
           <div className="w-full md:w-[475px] flex flex-col gap-6 md:gap-8">
             {/* Title */}
             <div className="text-center md:text-left">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-                <span className="block text-2xl md:text-[24px] font-light mb-4 text-secondary uppercase">
-                  How San Francisco
-                </span>
-                <span className="block text-4xl md:text-[44px] font-bold text-foreground">
-                  Cheap Flights Works
-                </span>
+              <h2 className="text-3xl sm:text-4xl md:text-[48px] font-extrabold leading-tight">
+              How San Francisco Cheap Flights Works
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mt-4">
                 San Francisco Cheap Flights makes your travel dreams a reality.
@@ -57,7 +68,7 @@ export default function HowItWorks() {
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col sm:flex-row w-full p-4 sm:p-[30px] items-center sm:items-start gap-4 sm:gap-[30px] rounded-[30px] transition-all duration-300
+                  className={`flex flex-col sm:flex-row w-full p-4 sm:p-[20px] items-center sm:items-start gap-4 sm:gap-[30px] rounded-[30px] transition-all duration-300
                     ${index === 1
                       ? "shadow-[0_2px_40px_rgba(0,0,0,0.08)]"
                       : "shadow-none hover:shadow-none"
@@ -65,7 +76,7 @@ export default function HowItWorks() {
                 >
                   {/* Number Circle */}
                   <div
-                    className={`flex w-[70px] sm:w-[100px] h-[70px] sm:h-[100px] p-2 sm:p-[10px] justify-center items-center flex-shrink-0 rounded-[30px] text-white text-[24px] sm:text-[36px] font-bold ${getBgColor(
+                    className={`flex w-[50px] h-[50px] p-2 sm:p-[10px] justify-center items-end flex-shrink-0 rounded-[30px]  text-white text-[24px]  font-bold ${getBgColor(
                       index
                     )}`}
                   >
@@ -94,21 +105,7 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          {/* Right Column: Image */}
-          <div className="flex-1 flex justify-center relative w-full">
-            {/* Blurred Circle Behind Image */}
-            <div className="absolute bottom-0 right-0 w-full md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] rounded-full opacity-50 bg-[#D9952F] blur-[150px] sm:blur-[200px] md:blur-[250px] -z-10" />
-
-            <div className="relative w-full h-[500px] sm:h-[500px] md:h-[717px] max-w-full">
-              <Image
-                src="/travel-2.png"
-                alt="How it works illustration"
-                fill
-                className="object-contain w-full"
-                priority
-              />
-            </div>
-          </div>
+          
         </div>
       </Container>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
