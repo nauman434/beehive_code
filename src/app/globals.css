@@ -1,26 +1,27 @@
 @import "tailwindcss";
 
+/* 1️⃣ Base variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFDFA;
+  --foreground: #1C1C1C;
 }
 
-@theme inline {
+/* 2️⃣ Tailwind theme tokens */
+@theme {
+  --color-primary: #872BFF;
+  --color-secondary: #F411CF;
+  --color-accent: #FF8126;
+  --color-light: #A8A8A8
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Font variable from Host Grotesk */
+  --font-sans: var(--font-host-grotesk);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 3️⃣ Base styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
 }
