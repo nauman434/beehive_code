@@ -24,10 +24,10 @@ export default function HowItWorks() {
   ];
 
   const getBgColor = (index: number) => {
-    if (index === 0) return "bg-primary";
-    if (index === 1) return "bg-accent";
-    if (index === 2) return "bg-secondary";
-    return "bg-primary";
+    if (index === 0) return "text-primary";
+    if (index === 1) return "text-accent";
+    if (index === 2) return "text-secondary";
+    return "text-primary";
   };
 
   return (
@@ -50,12 +50,12 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          {/* Right Column: Image */}
+          {/* Right Column */}
           <div className="w-full md:w-[475px] flex flex-col gap-6 md:gap-8">
             {/* Title */}
             <div className="text-center md:text-left">
               <h2 className="text-3xl sm:text-4xl md:text-[48px] font-extrabold leading-tight">
-              How San Francisco Cheap Flights Works
+                How San Francisco Cheap Flights Works
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mt-4">
                 San Francisco Cheap Flights makes your travel dreams a reality.
@@ -64,50 +64,36 @@ export default function HowItWorks() {
             </div>
 
             {/* Steps */}
+            {/* Steps */}
             <div className="flex flex-col gap-4 sm:gap-6">
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col sm:flex-row w-full p-4 sm:p-[20px] items-center sm:items-start gap-4 sm:gap-[30px] rounded-[30px] transition-all duration-300
-                    ${index === 1
-                      ? "shadow-[0_2px_40px_rgba(0,0,0,0.08)]"
-                      : "shadow-none hover:shadow-none"
-                    }`}
+                  className="flex flex-col w-full p-4 sm:p-[20px] rounded-[30px] transition-all duration-300 shadow-[0_4px_40px_rgba(0,0,0,0.08)] bg-white"
                 >
-                  {/* Number Circle */}
-                  <div
-                    className={`flex w-[50px] h-[50px] p-2 sm:p-[10px] justify-center items-end flex-shrink-0 rounded-[30px]  text-white text-[24px]  font-bold ${getBgColor(
-                      index
-                    )}`}
-                  >
-                    {index + 1}
-                  </div>
-
-                  {/* Text Content */}
-                  <div className="text-center sm:text-left">
-                    <h3 className="text-lg sm:text-[24px] font-bold text-[#1C1C1C] mb-1 sm:mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm sm:text-[18px] font-medium leading-[26px] sm:leading-[30px] text-[#A8A8A8]">
-                      {step.description}
-                    </p>
-                  </div>
+                  {/* Title with colored number */}
+                  <h3 className="text-lg sm:text-[24px] font-bold text-[#1C1C1C] mb-2">
+                    <span className={`${getBgColor(index)} mr-2`}>{index + 1}.</span> {step.title}
+                  </h3>
+                  <p className="text-sm sm:text-[18px] font-medium leading-[26px] sm:leading-[30px] text-[#A8A8A8]">
+                    {step.description}
+                  </p>
                 </div>
               ))}
             </div>
 
+
             {/* CTA Button */}
             <div className="mt-6 text-center md:text-left">
-              <Button
-                filled
-                onClick={() => setIsModalOpen(true)}
-              >Start saving now - sign up free!</Button>
+              <Button filled onClick={() => setIsModalOpen(true)}>
+                Start saving now - sign up free!
+              </Button>
             </div>
           </div>
-
-          
         </div>
       </Container>
+
+      {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <iframe
           src="https://subscribe-forms.beehiiv.com/a9529afc-ae28-4a9f-a4c8-9ccab120fa73"

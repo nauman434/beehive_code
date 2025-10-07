@@ -19,14 +19,16 @@ export default function Hero() {
             <div className="absolute -z-10 w-[400px] sm:w-[450px] md:w-[500px] h-[400px] sm:h-[450px] md:h-[500px] rounded-full bg-primary opacity-50 blur-[200px] sm:blur-[220px] md:blur-[250px] -top-24 sm:-top-32 md:-top-40 -left-16 sm:-left-24 md:-left-32"></div>
 
             {/* Top box */}
-            <div className="inline-flex items-center gap-2 sm:gap-4 h-[50px] px-4 py-4 rounded-[30px] bg-white shadow-[0_111px_31px_0_rgba(140,140,140,0),0_71px_29px_0_rgba(140,140,140,0.01),0_40px_24px_0_rgba(140,140,140,0.05),0_18px_18px_0_rgba(140,140,140,0.09),0_4px_10px_0_rgba(140,140,140,0.1)]">
-              <div className="w-6 sm:w-8 h-6 sm:h-8 relative">
-                <Image src="/compass.svg" alt="Compass Icon" fill className="object-contain" />
-              </div>
+            <div className="inline-flex items-center gap-2 sm:gap-4 h-[50px] px-0 py-0">
+              {/* Small dash/line */}
+              <span className="w-6 h-[2px] bg-primary inline-block"></span>
+
+              {/* Text */}
               <p className="uppercase tracking-wide text-xs sm:text-sm text-dark whitespace-nowrap">
                 Get vetted SFO deals straight to your inbox.
               </p>
             </div>
+
 
             {/* Main Heading */}
             <h1 className="text-[40px] sm:text-[60px] md:text-[70px] lg:text-[80px] font-bold text-foreground leading-[100%]">

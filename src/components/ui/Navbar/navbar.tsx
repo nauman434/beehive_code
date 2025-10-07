@@ -32,7 +32,7 @@ export default function Navbar() {
 
                     {/* Right: Join Us Button */}
                     <Button filled onClick={() => setIsModalOpen(true)}>
-                        <Link href="/join-us">Join Us</Link>
+                        <Link href="/join-us">Join Now</Link>
                     </Button>
                 </nav>
             </Container>

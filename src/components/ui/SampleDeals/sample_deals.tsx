@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import Container from "@/components/global/container";
-import Button from "@/components/global/button";
 import Image from "next/image";
+import Container from "@/components/global/container";
 import Modal from "@/components/global/modal";
+import Button from "@/components/global/button";
 
 export default function SampleDeals() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,102 +12,99 @@ export default function SampleDeals() {
     {
       img: "/honolulu.jpg",
       alt: "Honolulu",
-      from: "SFO",
-      to: "Honolulu",
-      discount: "70% off",
+      discount: "70% OFF",
+      destination: "Honolulu",
       price: "$899",
     },
     {
       img: "/las_vegas.jpg",
       alt: "Las Vegas",
-      from: "SFO",
-      to: "Las Vegas",
-      discount: "65% off",
+      discount: "65% OFF",
+      destination: "Las Vegas",
       price: "$599",
     },
     {
       img: "/tokyo.jpg",
       alt: "Tokyo",
-      from: "SFO",
-      to: "Tokyo",
-      discount: "80% off",
+      discount: "80% OFF",
+      destination: "Tokyo",
       price: "$707",
     },
     {
       img: "/lisbon.jpg",
       alt: "Lisbon",
-      from: "SFO",
-      to: "Lisbon",
-      discount: "75% off",
+      discount: "75% OFF",
+      destination: "Lisbon",
       price: "$650",
     },
   ];
 
   return (
-    <section className="py-20 mt-[50px] relative ">
-      {/* Background Map */}
-      <div className="absolute -bottom-100 -left-60 w-[800px] h-[800px] opacity-30 z-0 pointer-events-none">
-        <Image src="/map.png" alt="Map background" fill className="object-contain" />
-      </div>
-
-      <Container className="relative z-10">
-        {/* Title */}
-        <h2 className="mb-12 text-center md:text-left">
-          <span className="block text-4xl md:text-[64px] font-bold text-foreground">
+    <section className="py-20 relative">
+      <Container>
+        {/* Heading */}
+        <div className="flex flex-col items-center text-center mb-16">
+          <h2 className="text-[28px] sm:text-[40px] md:text-[48px] font-semibold uppercase text-[#872BFF] mb-4">
             Recent Free Deals from SFO
-          </span>
-        </h2>
+          </h2>
+          <p className="text-[#666] max-w-[700px] text-base sm:text-lg">
+            Discover our handpicked travel deals with amazing destinations and exclusive discounts. Book now and save more!
+          </p>
+        </div>
 
-        {/* Image Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-center mb-10 gap-[20px]">
+        {/* Deals Grid */}
+        <div className="flex flex-wrap justify-center gap-10">
           {deals.map((deal, index) => (
-            <div key={index} className="bg-white w-full rounded-3xl overflow-hidden shadow-md">
+            <div
+              key={index}
+              className="relative w-[90%] sm:w-[300px] md:w-[320px] lg:w-[350px] aspect-[350/429] rounded-[40px] overflow-hidden shadow-lg"
+            >
+              {/* Background Image */}
+              <Image
+                src={deal.img}
+                alt={deal.alt}
+                fill
+                className="object-cover"
+              />
 
-              {/* Image + Discount Badge */}
-              <div className="relative w-full h-[300px]">
-                <Image
-                  src={deal.img}
-                  alt={deal.alt}
-                  fill
-                  className="object-cover"
-                />
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-[rgba(0,0,0,0.2)]" />
 
+              {/* Discount Tag */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[50%] sm:w-[180px] h-[60px] sm:h-[77px] bg-[#FF8126] text-white rounded-b-[25px] flex items-center justify-center text-[32px] font-semibold uppercase">
+                {deal.discount}
               </div>
 
-              {/* Info */}
-              <div className="bg-accent text-white border border-accent h-[25px] flex items-center justify-center px-2">
-                <p className="text-[16px] font-bold">{deal.discount}</p>
+              {/* Destination Text (centered) */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h3 className="text-center text-white font-semibold text-[48px]  md:text-[56px] lg:text-[63px] uppercase leading-[120%] drop-shadow-[0_4px_10px_rgba(0,0,0,0.4)]">
+                  {deal.destination}
+                </h3>
               </div>
-              <div className="flex justify-between items-end px-4 py-7">
-                <div className="flex flex-col gap-2">
-                  <p className="text-[14px]">From {deal.from} to</p>
-                  <h3 className="text-[36px] font-extrabold leading-[100%] uppercase">{deal.to}</h3>
-                </div>
-                <div className="bg-primary text-white border border-accent h-[35px] flex items-center justify-center w-[75px] rounded-full text-[20px] font-extrabold leading-[99%]">
-                  {deal.price}
-                </div>
+
+              {/* Price Box */}
+              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[130px] sm:w-[156px] h-[50px] sm:h-[59px] bg-[#872BFF] rounded-[10px] flex items-center justify-center ">
+                <p className="text-white text-[24px] font-bold">{deal.price}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="text-center relative z-10">
-          <Button filled onClick={() => setIsModalOpen(true)}>
-            Join free to get deals like these in your inbox!
-          </Button>
+        {/* View More Button */}
+        <div className="flex justify-center mt-16">
+          <Button onClick={() => setIsModalOpen(true)}>Unlock More Deals</Button>
         </div>
-      </Container>
 
-      {/* Modal */}
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <iframe
-          src="https://subscribe-forms.beehiiv.com/a9529afc-ae28-4a9f-a4c8-9ccab120fa73"
-          className="w-full h-[400px]"
-          frameBorder="0"
-          scrolling="no"
-        />
-      </Modal>
+        {/* Modal */}
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <div className="text-center">
+            <h3 className="text-2xl font-semibold mb-4">More Deals Coming Soon!</h3>
+            <p className="text-[#666]">
+              Stay tuned for more exclusive travel deals and offers. Subscribe to our newsletter to get notified!
+            </p>
+          </div>
+        </Modal>
+      </Container>
     </section>
   );
 }
