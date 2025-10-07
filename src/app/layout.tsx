@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Darker_Grotesque } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar/navbar";
 import Footer from "@/components/ui/Footer/footer";
+
+const darkerGrotesque = Darker_Grotesque({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800","900"],
+  variable: "--font-darkerGrotesque",
+})
 
 // Inter for body / secondary text
 const inter = Inter({
@@ -25,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang="en" className={`${darkerGrotesque.variable}${inter.variable}`}>
       <body className="antialiased bg-background text-foreground font-sans">
         <Navbar />
         <main>{children}</main>
