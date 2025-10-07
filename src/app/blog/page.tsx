@@ -3,8 +3,18 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
 
+// Define the blog type
+type Blog = {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  mainImage?: any; // You can type this more strictly if you know Sanity image structure
+  publishedAt: string;
+  authorName: string;
+};
+
 export default async function BlogPage() {
-  const blogs = await client.fetch(`
+  const blogs: Blog[] = await client.fetch(`
     *[_type == "blog"]{
       _id,
       title,
@@ -19,10 +29,10 @@ export default async function BlogPage() {
     <main className="max-w-6xl mx-auto py-20 px-4">
       <h1 className="text-4xl font-bold mb-10">Latest Blog Posts</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogs.map((blog: any) => (
+        {blogs.map((blog) => (
           <Link
             key={blog._id}
-            href={`/blog/${blog.slug.current}`} // Make sure your blog page uses slug
+            href={`/blog/${blog.slug.current}`}
             className="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-200"
           >
             {blog.mainImage && (
