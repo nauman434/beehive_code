@@ -3,12 +3,21 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
 
+// Define Sanity image type
+type SanityImage = {
+  _type: "image";
+  asset: {
+    _ref: string;
+    _type: "reference";
+  };
+};
+
 // Define the blog type
 type Blog = {
   _id: string;
   title: string;
   slug: { current: string };
-  mainImage?: any; // You can type this more strictly if you know Sanity image structure
+  mainImage?: SanityImage;
   publishedAt: string;
   authorName: string;
 };
@@ -58,3 +67,5 @@ export default async function BlogPage() {
     </main>
   );
 }
+
+
