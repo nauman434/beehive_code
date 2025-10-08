@@ -53,11 +53,11 @@ export default function SampleDeals() {
         </div>
 
         {/* Deals Grid */}
-        <div className="flex flex-wrap justify-center gap-10">
+        <div className="grid gap-[20px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {deals.map((deal, index) => (
             <div
               key={index}
-              className="relative w-[90%] sm:w-[300px] md:w-[320px] lg:w-[350px] aspect-[350/429] rounded-[40px] overflow-hidden shadow-lg"
+              className="relative w-full aspect-[350/429] rounded-[40px] overflow-hidden shadow-lg"
             >
               {/* Background Image */}
               <Image
@@ -75,15 +75,15 @@ export default function SampleDeals() {
                 {deal.discount}
               </div>
 
-              {/* Destination Text (centered) */}
+              {/* Destination Text */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="text-center text-white font-semibold text-[48px]  md:text-[56px] lg:text-[63px] uppercase leading-[120%] drop-shadow-[0_4px_10px_rgba(0,0,0,0.4)]">
+                <h3 className="text-center text-white font-semibold text-[40px] uppercase leading-[120%] drop-shadow-[0_4px_10px_rgba(0,0,0,0.4)]">
                   {deal.destination}
                 </h3>
               </div>
 
               {/* Price Box */}
-              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[130px] sm:w-[156px] h-[50px] sm:h-[59px] bg-[#872BFF] rounded-[10px] flex items-center justify-center ">
+              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[130px] sm:w-[156px] h-[50px] sm:h-[59px] bg-[#872BFF] rounded-[10px] flex items-center justify-center">
                 <p className="text-white text-[24px] font-bold">{deal.price}</p>
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function SampleDeals() {
 
         {/* View More Button */}
         <div className="flex justify-center mt-16">
-          <Button onClick={() => setIsModalOpen(true)}>Unlock More Deals</Button>
+          <Button onClick={() => setIsModalOpen(true)}>Unlock more deals</Button>
         </div>
 
         {/* Modal */}

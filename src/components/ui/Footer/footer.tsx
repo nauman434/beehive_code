@@ -43,14 +43,14 @@ export default function Footer() {
           </div>
 
           {/* Right: Newsletter & Social */}
-          <div className="flex flex-col items-center md:items-end gap-4">
+          <div className="flex flex-col items-center md:items-end gap-8">
             <Button filled onClick={() => setIsModalOpen(true)}>
-              Join Newsletter
+              Join for free
             </Button>
             <div className="flex items-center space-x-3">
-              <Link href="#" className="text-gray-500 hover:text-blue-600 transition"><FaFacebookF /></Link>
-              <Link href="#" className="text-gray-500 hover:text-blue-400 transition"><FaTwitter /></Link>
-              <Link href="#" className="text-gray-500 hover:text-pink-600 transition"><FaInstagram /></Link>
+              <Link href="#" className="text-gray-500 hover:text-blue-600 transition text-[24px]"><FaFacebookF /></Link>
+              <Link href="#" className="text-gray-500 hover:text-blue-400 transition text-[24px]"><FaTwitter /></Link>
+              <Link href="#" className="text-gray-500 hover:text-pink-600 transition text-[24px]"><FaInstagram /></Link>
             </div>
           </div>
         </div>
