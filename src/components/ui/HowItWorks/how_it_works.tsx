@@ -39,9 +39,9 @@ export default function HowItWorks() {
             {/* Blurred Circle Behind Image */}
             <div className="absolute bottom-0 right-0 w-full md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] rounded-full opacity-50 bg-[#D9952F] blur-[150px] sm:blur-[200px] md:blur-[250px] -z-10" />
 
-            <div className="relative w-full h-[500px] sm:h-[500px] md:h-[717px] max-w-full">
+            <div className="relative w-full h-[500px] sm:h-[500px] md:h-[756px] max-w-full">
               <Image
-                src="/travel-2.png"
+                src="/travel.jpg"
                 alt="How it works illustration"
                 fill
                 className="object-contain w-full"
