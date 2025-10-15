@@ -31,7 +31,7 @@ export default function HowItWorks() {
   };
 
   return (
-    <section className="py-20 relative">
+    <section className="py-20 relative bg-secondary">
       <Container>
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
           {/* Left Column */}
@@ -41,7 +41,7 @@ export default function HowItWorks() {
 
             <div className="relative w-full h-[500px] sm:h-[500px] md:h-[756px] max-w-full">
               <Image
-                src="/travel.jpg"
+                src="/travel.png"
                 alt="How it works illustration"
                 fill
                 className="object-contain w-full"
@@ -54,24 +54,22 @@ export default function HowItWorks() {
           <div className="w-full md:w-[475px] flex flex-col gap-6 md:gap-8">
             {/* Title */}
             <div className="text-center md:text-left">
-              <h2 className="text-3xl sm:text-4xl md:text-[48px] font-extrabold leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-[48px] font-extrabold text-white leading-tight">
                 How San Francisco Cheap Flights Works
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 mt-4">
-                San Francisco Cheap Flights makes your travel dreams a reality.
-                Get vetted deals to Tokyo, Hawaii and more straight to your inbox!
+              <p className="text-base sm:text-lg text-gray-200 mt-4">
+                San Francisco Cheap Flights makes your travel dreams a reality by sending vetted deals to destinations like Tokyo, Hawaii, and more straight to your inbox. Simply sign up for our free newsletter in seconds, receive weekly emails with the best SFO flight deals, and book your flights directly with no hassle.
               </p>
             </div>
 
             {/* Steps */}
             {/* Steps */}
-            <div className="flex flex-col gap-4 sm:gap-6">
+            {/* <div className="flex flex-col gap-4 sm:gap-6">
               {steps.map((step, index) => (
                 <div
                   key={index}
                   className="flex flex-col w-full p-4 sm:p-[20px] rounded-[30px] transition-all duration-300 shadow-[0_4px_40px_rgba(0,0,0,0.08)] bg-white"
                 >
-                  {/* Title with colored number */}
                   <h3 className="text-lg sm:text-[24px] font-bold text-[#1C1C1C] mb-2">
                     <span className={`${getBgColor(index)} mr-2`}>{index + 1}.</span> {step.title}
                   </h3>
@@ -80,13 +78,13 @@ export default function HowItWorks() {
                   </p>
                 </div>
               ))}
-            </div>
+            </div> */}
 
 
             {/* CTA Button */}
             <div className="mt-6 text-center md:text-left">
               <Button filled onClick={() => setIsModalOpen(true)}>
-                Start saving now - sign up free!
+                Sign up free!
               </Button>
             </div>
           </div>

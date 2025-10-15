@@ -13,7 +13,7 @@ export default function FreeGuide() {
         <div className="bg-[#F9F4FF] rounded-3xl p-6 sm:p-10 flex flex-col items-center justify-center text-center gap-4 sm:gap-6 w-full relative sm:overflow-hidden  h-auto sm:h-[500px]">
           {/* Title */}
           <h2 className="leading-tight">
-            <span className="block text-[50px] sm:text-[70px] md:text-[80px] font-bold text-foreground leading-[100%]">
+            <span className="block text-[48px] font-bold text-foreground leading-[100%]">
               Free San Francisco Travel Guide
             </span>
           </h2>

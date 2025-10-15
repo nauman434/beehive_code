@@ -44,7 +44,7 @@ export default function SampleDeals() {
       <Container>
         {/* Heading */}
         <div className="flex flex-col items-center text-center mb-16">
-          <h2 className="text-[28px] sm:text-[40px] md:text-[48px] font-semibold uppercase text-[#872BFF] mb-4">
+          <h2 className="text-[28px] sm:text-[40px] md:text-[48px] font-bold uppercase text-secondary mb-4">
             Recent Free Deals from SFO
           </h2>
           <p className="text-[#666] max-w-[700px] text-base sm:text-lg">
@@ -53,38 +53,35 @@ export default function SampleDeals() {
         </div>
 
         {/* Deals Grid */}
-        <div className="grid gap-[20px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {deals.map((deal, index) => (
             <div
               key={index}
-              className="relative w-full aspect-[350/429] rounded-[40px] overflow-hidden shadow-lg"
+              className="group bg-white rounded-[24px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
             >
-              {/* Background Image */}
-              <Image
-                src={deal.img}
-                alt={deal.alt}
-                fill
-                className="object-cover"
-              />
-
-              {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-[rgba(0,0,0,0.2)]" />
-
-              {/* Discount Tag */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[50%] sm:w-[180px] h-[60px] sm:h-[77px] bg-[#FF8126] text-white rounded-b-[25px] flex items-center justify-center text-[32px] font-semibold uppercase">
-                {deal.discount}
+              {/* Image */}
+              <div className="relative w-full aspect-[4/5] overflow-hidden">
+                <Image
+                  src={deal.img}
+                  alt={deal.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
 
-              {/* Destination Text */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="text-center text-white font-semibold text-[40px] uppercase leading-[120%] drop-shadow-[0_4px_10px_rgba(0,0,0,0.4)]">
+              {/* Info Section */}
+              <div className="p-5 flex flex-col items-start text-left">
+                <h3 className="text-[22px] font-semibold text-gray-900 mb-3">
                   {deal.destination}
                 </h3>
-              </div>
-
-              {/* Price Box */}
-              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[130px] sm:w-[156px] h-[50px] sm:h-[59px] bg-[#872BFF] rounded-[10px] flex items-center justify-center">
-                <p className="text-white text-[24px] font-bold">{deal.price}</p>
+                <div className="flex items-center justify-between w-full">
+                  <span className="text-[20px] font-bold text-[#872BFF]">
+                    {deal.price}
+                  </span>
+                  <span className="text-sm font-medium bg-[#FF8126] text-white px-3 py-1 rounded-full">
+                    {deal.discount}
+                  </span>
+                </div>
               </div>
             </div>
           ))}

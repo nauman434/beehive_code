@@ -13,10 +13,10 @@
 
 /* 2️⃣ Tailwind theme tokens */
 @theme {
-  --color-primary: #872BFF;
-  --color-secondary: #F411CF;
+  --color-primary: #FF6025;
+  --color-secondary: #181818;
   --color-accent: #FF8126;
-  --color-light: #A8A8A8;
+  --color-light: #181818;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-open-sans);
