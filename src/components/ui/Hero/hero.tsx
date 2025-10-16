@@ -14,10 +14,7 @@ export default function Hero() {
       <Container>
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16 relative z-10 text-center lg:text-left">
           {/* Left: Text */}
-          <div className="w-full sm:w-[50%] mt-[100px]  flex flex-col items-center lg:items-start relative">
-            {/* Blurred circle behind text */}
-            {/* <div className="absolute -z-10 w-[400px] sm:w-[450px] md:w-[500px] h-[400px] sm:h-[450px] md:h-[500px] rounded-full bg-primary opacity-50 blur-[200px] sm:blur-[220px] md:blur-[250px] -top-24 sm:-top-32 md:-top-40 -left-16 sm:-left-24 md:-left-32"></div> */}
-
+          <div className="w-full  mt-[100px]  flex flex-col items-center lg:items-start relative">
             {/* Top box */}
             <div className="inline-flex items-center gap-2 sm:gap-4 px-0 py-0 mb-6">
               {/* Small dash/line */}
@@ -46,7 +43,7 @@ export default function Hero() {
           </div>
 
           {/* Right: Image */}
-          <div className="flex justify-center lg:justify-end w-[649px] h-[672] relative">
+          <div className="flex justify-center lg:justify-end w-full h-[672] relative">
             {/* Blurred circle */}
             {/* <div className="hidden sm:block absolute -z-10 w-[400px] sm:w-[450px] md:w-[500px] lg:w-[550px] xl:w-[600px] h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] rounded-full bg-primary opacity-50 blur-[200px] sm:blur-[220px] md:blur-[250px] lg:blur-[280px] xl:blur-[300px] top-0 sm:top-10 md:top-16 -right-10 sm:-right-14 lg:-right-20"></div> */}
 
