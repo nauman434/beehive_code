@@ -14,7 +14,7 @@ export default function Hero() {
       <Container>
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16 relative z-10 text-center lg:text-left">
           {/* Left: Text */}
-          <div className="w-full  mt-[100px]  flex flex-col items-center lg:items-start relative">
+          <div className="w-full  sm:mt-[100px] mt-[35px]  flex flex-col items-center lg:items-start relative">
             {/* Top box */}
             <div className="inline-flex items-center gap-2 sm:gap-4 px-0 py-0 mb-6">
               {/* Small dash/line */}
