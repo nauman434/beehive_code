@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   const baseStyles =
     "h-[50px] px-[30px] rounded-full transition-colors duration-200 cursor-pointer text-[16px]";
 
-  const filledStyles = "bg-primary text-white hover:bg-[#FF8126] hover:text-primary";
+  const filledStyles = "bg-primary text-white hover:bg-[#FF8126] hover:text-secondary";
   const outlineStyles = "bg-[#F9F4FF] text-primary hover:bg-primary hover:text-white";
 
   let appliedStyles = baseStyles;
