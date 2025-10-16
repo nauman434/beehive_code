@@ -47,7 +47,7 @@ export default function Hero() {
             {/* Blurred circle */}
             {/* <div className="hidden sm:block absolute -z-10 w-[400px] sm:w-[450px] md:w-[500px] lg:w-[550px] xl:w-[600px] h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] rounded-full bg-primary opacity-50 blur-[200px] sm:blur-[220px] md:blur-[250px] lg:blur-[280px] xl:blur-[300px] top-0 sm:top-10 md:top-16 -right-10 sm:-right-14 lg:-right-20"></div> */}
 
-            <div className="relative w-full h-[400px] lg:h-[650px] xl:h-[700px]">
+            <div className="relative w-full h-[400px] lg:h-[650px]">
               <Image
                 src="/hero_img.png"
                 alt="Mobile mockup illustration"

@@ -53,14 +53,14 @@ export default function SampleDeals() {
         </div>
 
         {/* Deals Grid */}
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {deals.map((deal, index) => (
             <div
               key={index}
               className="group bg-white rounded-[24px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
             >
               {/* Image */}
-              <div className="relative w-full aspect-[4/5] overflow-hidden">
+              <div className="relative w-full h-[200px] overflow-hidden">
                 <Image
                   src={deal.img}
                   alt={deal.alt}
